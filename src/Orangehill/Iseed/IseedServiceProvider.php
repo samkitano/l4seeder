@@ -55,4 +55,5 @@ class IseedServiceProvider extends ServiceProvider {
 		return array('iseed');
 	}
 
+	
 }

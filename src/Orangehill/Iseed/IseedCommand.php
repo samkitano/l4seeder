@@ -133,4 +133,5 @@ class IseedCommand extends Command {
 		return [$seedPath . '/' . $className . '.php', $className . '.php'];
 
 	}
+
 }
