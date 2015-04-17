@@ -9,7 +9,7 @@ class IseedTest extends PHPUnit_Framework_TestCase {
 
     public function __construct()
     {
-        static::$stubsDir = __DIR__.'/../src/Orangehill/Iseed/Stubs';
+        static::$stubsDir = __DIR__.'/../src/Samkitano/Iseed/Stubs';
         static::$testStubsDir = __DIR__.'/Stubs';
     }
 
@@ -2075,7 +2075,7 @@ class IseedTest extends PHPUnit_Framework_TestCase {
                         'time' => '2013-10-18 14:31:24',
                     )
         )));
-        $iSeed = new Orangehill\Iseed\Iseed();
+        $iSeed = new Samkitano\Iseed\Iseed();
         foreach ($testStubs as $key=>$stub){
             $output = $iSeed->populateStub('test_class', $productionStub, 'test_table', $stub['data'], 500);
             $this->assertEquals($stub['content'], $output, "Stub {$key} is not what's it's expected to be.");
@@ -2083,12 +2083,12 @@ class IseedTest extends PHPUnit_Framework_TestCase {
     }
 
     /**
-     * @expectedException Orangehill\Iseed\TableNotFoundException
+     * @expectedException Samkitano\Iseed\TableNotFoundException
      * @expectedExceptionMessage Table nonexisting was not found.
      */
     public function testTableNotFoundException()
     {
-        $hasTable = m::mock('Orangehill\Iseed\Iseed[hasTable]')->makePartial();
+        $hasTable = m::mock('Samkitano\Iseed\Iseed[hasTable]')->makePartial();
         $hasTable->shouldReceive('hasTable')->once()->andReturn(false);
         $hasTable->generateSeed('nonexisting','database', 'numOfRows');
     }
@@ -2099,23 +2099,23 @@ class IseedTest extends PHPUnit_Framework_TestCase {
             array('id' => '1', 'name' => 'one'),
             array('id' => '2', 'name' => 'two')
         );
-        $iseed = new Orangehill\Iseed\Iseed();
+        $iseed = new Samkitano\Iseed\Iseed();
         $output = $iseed->repackSeedData($data);
         $this->assertEquals(json_encode($data), json_encode($output));
     }
 
     public function testCanGenerateClassName()
     {
-        $iseed = new Orangehill\Iseed\Iseed();
+        $iseed = new Samkitano\Iseed\Iseed();
         $output = $iseed->generateClassName('tablename');
         $this->assertEquals('TablenameTableSeeder', $output);
     }
 
     public function testCanGetStubPath()
     {
-        $iseed = new Orangehill\Iseed\Iseed();
+        $iseed = new Samkitano\Iseed\Iseed();
         $output = $iseed->getStubPath();
-        $expected = substr(__DIR__, 0, -5) . 'src/Orangehill/Iseed/Stubs';
+        $expected = substr(__DIR__, 0, -5) . 'src/Samkitano/Iseed/Stubs';
         $this->assertEquals($expected, $output);
     }
 
@@ -2124,11 +2124,11 @@ class IseedTest extends PHPUnit_Framework_TestCase {
         $file = m::mock('Illuminate\Filesystem\Filesystem')->makePartial();
         $file->shouldReceive('get')
              ->once()
-             ->with(substr(__DIR__, 0, -5) . 'src/Orangehill/Iseed/Stubs/seed.stub');
+             ->with(substr(__DIR__, 0, -5) . 'src/Samkitano/Iseed/Stubs/seed.stub');
         $file->shouldReceive('put')
              ->once()
              ->with('seedPath', 'populatedStub');
-        $mocked = m::mock('Orangehill\Iseed\Iseed', array($file))->makePartial();
+        $mocked = m::mock('Samkitano\Iseed\Iseed', array($file))->makePartial();
         $mocked->shouldReceive('hasTable')->once()->andReturn(true);
         $mocked->shouldReceive('getData')->once()->andReturn(array());
         $mocked->shouldReceive('generateClassName')->once()->andReturn('ClassName');
