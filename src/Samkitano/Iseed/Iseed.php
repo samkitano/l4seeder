@@ -168,7 +168,7 @@ class Iseed {
 	 */
 	public function populateStub($class, $stub, $table, $data, $chunkSize = null)
 	{
-        $chunkSize = $chunkSize ?: config('iseed::config.chunk_size');
+        $chunkSize = $chunkSize ?: \Config::get('iseed::config.chunk_size');
         $inserts = '';
         $chunks = array_chunk($data, $chunkSize);
         foreach ($chunks as $chunk) {
