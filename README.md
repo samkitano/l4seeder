@@ -7,3 +7,4 @@ Same as iSeed
 Included option
 
 	'ignore_primary' => true // excludes table id column from seeders
+

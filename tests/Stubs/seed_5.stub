@@ -41,5 +41,4 @@ class test_class extends Seeder {
 			),
 		));
 	}
-
 }

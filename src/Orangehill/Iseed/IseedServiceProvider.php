@@ -75,5 +75,4 @@ class IseedServiceProvider extends ServiceProvider {
 
 	    $this->app['config']->set('iseed::config', $config);
 	}
-
 }

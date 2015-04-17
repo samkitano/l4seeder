@@ -288,5 +288,4 @@ class Iseed {
 
         return $this->files->put($databaseSeederPath, $content) !== false;
     }
-
 }

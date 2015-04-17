@@ -4,5 +4,6 @@ return array(
 
 	'path'              => '/database/seeds',
     'chunk_size'        => 500, // Maximum number of rows per insert statement
-    'ignore_primary'    => true,
+    'ignore_primary'    => true, // ignore 'id' field
+
 );

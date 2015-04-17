@@ -14,5 +14,4 @@ class {{class}} extends Seeder {
 		\DB::table('{{table}}')->truncate();
         {{insert_statements}}
 	}
-
 }

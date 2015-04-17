@@ -131,6 +131,5 @@ class IseedCommand extends Command {
 		$className = app('iseed')->generateClassName($table);
 		$seedPath = base_path() . config('iseed::config.path');
 		return [$seedPath . '/' . $className . '.php', $className . '.php'];
-
     }
 }

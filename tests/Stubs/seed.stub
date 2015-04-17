@@ -14,5 +14,4 @@ class test_class extends Seeder {
 		\DB::table('test_table')->delete();
 		{{insert_statements}}
 	}
-
 }

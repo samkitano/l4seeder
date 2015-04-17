@@ -9,6 +9,9 @@ class Iseed extends Facade {
    *
    * @return string
    */
-  protected static function getFacadeAccessor() { return 'iseed'; }
+  protected static function getFacadeAccessor()
+  {
+	  return 'iseed';
+  }
 
 }
