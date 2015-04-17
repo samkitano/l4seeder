@@ -253,7 +253,7 @@ class Iseed {
     */
 	public function cleanSection()
 	{
-		$databaseSeederPath = base_path() . \Config::get('iseed::config.path') . '/DatabaseSeeder.php';
+		$databaseSeederPath = app_path() . \Config::get('iseed::config.path') . '/DatabaseSeeder.php';
 
 		$content = $this->files->get($databaseSeederPath);
 
@@ -270,7 +270,7 @@ class Iseed {
     */
     public function updateDatabaseSeederRunMethod($className)
     {
-    	$databaseSeederPath = base_path() . \Config::get('iseed::config.path') . '/DatabaseSeeder.php';
+    	$databaseSeederPath = app_path() . \Config::get('iseed::config.path') . '/DatabaseSeeder.php';
 
         $content = $this->files->get($databaseSeederPath);
         if(strpos($content, "\$this->call('{$className}')")===false)
