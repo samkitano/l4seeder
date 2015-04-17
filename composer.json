@@ -1,12 +1,12 @@
 {
-    "name": "orangehill/iseed",
+    "name": "samkitano/l4seeder",
     "description": "Generate a new Laravel database seed file based on data from the existing database table.",
     "keywords": ["laravel", "generators", "seed", "artisan"],
     "license": "BSD-2-Clause",
     "authors": [
         {
-            "name": "Tihomir Opacic",
-            "email": "tihomir.opacic@orangehilldev.com"
+            "name": "Sam Kitano",
+            "email": "sam.kitano@gmail.com"
         }
     ],
     "require": {
