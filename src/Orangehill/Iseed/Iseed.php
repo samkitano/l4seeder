@@ -1,7 +1,6 @@
 <?php namespace Orangehill\Iseed;
 
 use Illuminate\Filesystem\Filesystem;
-use Illuminate\Support\Facades\Config;
 
 class Iseed {
 
@@ -23,9 +22,9 @@ class Iseed {
 	public function generateSeed($table, $database = null, $max = 0)
 	{
 		if(!$database) {
-			$database = config('database.default');
+			$database = \Config::get('database.default');
 		}
-		
+
 		$this->connection = $database;
 
 		// Check if table exists
@@ -65,7 +64,7 @@ class Iseed {
 	 */
 	public function getSeedPath()
 	{
-		return base_path() . config('iseed::config.path');
+		return app_path() . \Config::get('iseed::path');
 	}
 
 	/**
@@ -74,7 +73,7 @@ class Iseed {
 	 */
 	public function getIgnorePrimary()
 	{
-		return config('iseed::config.ignore_primary') === true ? true : false;
+		return \Config::get('iseed::config.ignore_primary') === true ? true : false;
 	}
 
 	/**

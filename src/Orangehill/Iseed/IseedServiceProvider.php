@@ -12,14 +12,14 @@ class IseedServiceProvider extends ServiceProvider {
 	protected $defer = false;
 
 	/**
-     * Bootstrap the application events.
-     *
-     * @return void
-     */
+	 * Bootstrap the application events.
+	 *
+	 * @return void
+	 */
 	public function boot()
-    {
-        require base_path() . '/vendor/autoload.php';
-    }
+	{
+		$this->package('orangehill/iseed');
+	}
 
 	/**
 	 * Register the service provider.
@@ -28,8 +28,6 @@ class IseedServiceProvider extends ServiceProvider {
 	 */
 	public function register()
 	{
-    	$this->registerResources();
-
 		$this->app['iseed'] = $this->app->share(function($app)
 		{
 			return new Iseed;
@@ -57,22 +55,4 @@ class IseedServiceProvider extends ServiceProvider {
 		return array('iseed');
 	}
 
-	/**
-	 * Register the package resources.
-	 *
-	 * @return void
-	 */
-	protected function registerResources()
-	{
-	    $userConfigFile    = app()->configPath().'/iseed.php';
-	    $packageConfigFile = __DIR__.'/../../config/config.php';
-	    $config            = $this->app['files']->getRequire($packageConfigFile);
-
-	    if (file_exists($userConfigFile)) {
-	        $userConfig = $this->app['files']->getRequire($userConfigFile);
-	        $config     = array_replace_recursive($config, $userConfig);
-	    }
-
-	    $this->app['config']->set('iseed::config', $config);
-	}
 }
