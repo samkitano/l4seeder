@@ -1,4 +1,4 @@
-<?php namespace Orangehill\Iseed;
+<?php namespace Samkitano\Iseed;
 
 use Illuminate\Filesystem\Filesystem;
 
@@ -17,7 +17,7 @@ class Iseed {
 	 * @param  string  $database
 	 * @param  int 	   $max
 	 * @return bool
-	 * @throws Orangehill\Iseed\TableNotFoundException
+	 * @throws Samkitano\Iseed\TableNotFoundException
 	 */
 	public function generateSeed($table, $database = null, $max = 0)
 	{

@@ -1,4 +1,4 @@
-<?php namespace Orangehill\Iseed\Facades;
+<?php namespace Samkitano\Iseed\Facades;
 
 use Illuminate\Support\Facades\Facade;
 

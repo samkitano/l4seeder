@@ -1,4 +1,4 @@
-<?php namespace Orangehill\Iseed;
+<?php namespace Samkitano\Iseed;
 
 use Illuminate\Console\Command;
 use Symfony\Component\Console\Input\InputOption;
@@ -23,7 +23,7 @@ class IseedCommand extends Command {
 	/**
 	 * Create a new command instance.
 	 *
-	 * @return \Orangehill\Iseed\IseedCommand
+	 * @return \Samkitano\Iseed\IseedCommand
 	 */
 	public function __construct()
 	{

@@ -1,4 +1,4 @@
-<?php namespace Orangehill\Iseed;
+<?php namespace Samkitano\Iseed;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -18,7 +18,7 @@ class IseedServiceProvider extends ServiceProvider {
 	 */
 	public function boot()
 	{
-		$this->package('orangehill/iseed');
+		$this->package('samkitano/iseed');
 	}
 
 	/**
@@ -35,7 +35,7 @@ class IseedServiceProvider extends ServiceProvider {
 		$this->app->booting(function()
 		{
 			$loader = \Illuminate\Foundation\AliasLoader::getInstance();
-			$loader->alias('Iseed', 'Orangehill\Iseed\Facades\Iseed');
+			$loader->alias('Iseed', 'Samkitano\Iseed\Facades\Iseed');
 		});
 
 		$this->app['command.iseed'] = $this->app->share(function($app)
@@ -55,5 +55,5 @@ class IseedServiceProvider extends ServiceProvider {
 		return array('iseed');
 	}
 
-	
+
 }

@@ -1,4 +1,4 @@
-<?php namespace Orangehill\Iseed;
+<?php namespace Samkitano\Iseed;
 
 class TableNotFoundException extends \RuntimeException {}
 
